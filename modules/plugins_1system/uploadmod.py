@@ -3,6 +3,7 @@ from modules.plugins_1system.settings.main_settings import file_list
 from command import fox_command
 import os
 
+
 @Client.on_message(fox_command("uploadmod", "Uploadmod", os.path.basename(__file__), "[module name]") & filters.me)
 async def uploadmod(client, message):
     try:

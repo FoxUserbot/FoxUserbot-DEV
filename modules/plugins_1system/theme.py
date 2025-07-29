@@ -6,6 +6,7 @@ from command import fox_command
 
 THEME_PATH = "userdata/theme.ini"
 
+
 @Client.on_message(fox_command("theme", "Theme", os.path.basename(__file__), "[help/info/vars] [set/reset] [image/text] [value]") & filters.me)
 async def theme_command(client, message):
     from prefix import my_prefix

@@ -4,6 +4,7 @@ from command import fox_command
 import os
 import wget
 
+
 @Client.on_message(fox_command("loadmod", "Loadmod", os.path.basename(__file__), "[link to the module/reply]") & filters.me)
 async def loadmod(client, message):
     if not message.reply_to_message:
