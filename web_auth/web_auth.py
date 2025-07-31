@@ -98,6 +98,10 @@ def submit_password():
     return jsonify({'message': 'Password received'})
 
 def find_free_port() -> int:
+    # Проверяем, запущено ли в ShakeHost
+    if os.environ.get('SHAKEHOST') == 'true' or os.environ.get('SHARKHOST') == 'true' or "sharkhost" in subprocess.check_output("cat /etc/hostname", shell=True, text=True).strip():
+        return 8080
+    
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(('localhost', 0))
         return s.getsockname()[1]
