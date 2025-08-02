@@ -58,7 +58,7 @@ async def backup_command(client, message):
         await client.send_document(
             chat_id=message.chat.id,
             document=backup_file,
-            caption=f"<emoji id='5472308992514464048'>🔐</emoji> | Backup {Path(backup_file).name}\n<emoji id='5283051451889756068'>🦊</emoji> | Only for FoxUserbot\n<emoji id='5296369303661067030'>🔒</emoji> | Version: {version}\n<emoji id='5271604874419647061'>🔗</emoji> | https://t.me/foxteam0",
+            caption=f"<emoji id='5472308992514464048'>🔐</emoji> | Backup {Path(backup_file).name}\n<emoji id='5283051451889756068'>🦊</emoji> | Only for FoxUserbot\n<emoji id='5296369303661067030'>🔒</emoji> | Version: {version}\n<emoji id='5271604874419647061'>🔗</emoji> | https://github.com/FoxUserbot/FoxUserbot",
             message_thread_id=message.message_thread_id
         )
         await msg.delete()
@@ -74,4 +74,5 @@ async def restore_command(client, message):
     await message.edit("<b><emoji id='5264727218734524899'>🔄</emoji> Ready for restoration...</b>")
     await restore_backup(client, message)
     await restart(message, restart_type="restart")
+
 
